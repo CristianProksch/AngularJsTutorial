@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    <link type="text/css" rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-    </head>
-    <div class='container' data-ng-app="myApp">
-        <div class='row'>
-            <div class='col-md-12'>
-                <h2>Debugging Area</h2>
-                <div class="col-md-6">
-                    <h3>Try to change the names</h3>
-                    <div ng-controller="myCtrl">
-                        First Name: <input type="text" ng-model="firstName"><br>
-                        Last Name: <input type="text" ng-model="lastName"><br>
-                        <br>
-			<!-- Beispiel fÃ¼r Einfache Expressions -->
-                        Full Name: {{firstName + " " + lastName}}
-			<br>
-			<ul>
-                        <li data-ng-repeat="user in users">
-                            {{user.name}}
-                        </li>
-			</ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="js/app.js"></script>
-    </body>
+<head>
+<!-- 
+Einbindung der relevanten Software-Bibliotheken, unter anderem (Voraussetzung: Internetverbindung!):
+	Twitter Bootstrap fuer das Layout;
+	AngularJS fuer das JavaScript-Framework zur Softwarearchitektur;
+	JQuery als oftmalige Voraussetzung fuer andere JS-Bibliotheken;  
+-->
+<link type="text/css" rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+</head>
+<div class='container' data-ng-app="myApp">
+	<div class='row'>
+		<div class='col-md-12'>
+			<h1>AngularJS: Webanwendungen mit JavaScript und einer Prise JSF</h1>
+			<div class="col-md-6">
+				<h2>Grundsaetzliche Beispiele</h2>
+				<div data-ng-controller="myCtrl">
+					<h3>Formulare und Data-Bindings</h3>
+					<!-- Beispiel für DataBinding mit angeschlossenem Formular-Eingabefeldern -->
+					<form>
+					<p>
+					First Name: <input type="text" data-ng-model="firstName"><br>
+					Last Name: <input type="text" data-ng-model="lastName">
+					</p>
+					</form>
+					<!-- Beispiel für Einfache Expressions -->
+					<p>
+					Full Name: {{firstName + " " + lastName}}
+					</p>
+					<h3>Arrays als Objektattribute</h3>
+					<!-- Beispiel einer Ausgabe einer Liste als Attribut -->
+					<p data-ng-repeat="user in users">{{user.name}}</p>
+					<h3>Filter und Direktiven</h3>
+					<!-- Beispiel eines Filters und einer Direktive (ng-show) -->
+					<form>
+						<p>Was ist deine Lieblingszahl?<br>
+						<input type="text" ng-model="lieblingszahl">
+					</form>
+					<p ng-show="lieblingszahl">Deine Lieblingszahl ist (Wir ergänzen automatisch 2 Dezimalstellen): {{lieblingszahl | number: 2}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="js/app.js"></script><!-- Einbindung der Javascript-Dateien mit dem Code fuer AngularJS -->
+</body>
 </html>
 
