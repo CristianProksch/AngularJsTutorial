@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+Einbindung der relevanten Software-Bibliotheken, unter anderem (Voraussetzung: Internetverbindung!):
+	Twitter Bootstrap fuer das Layout;
+	AngularJS fuer das JavaScript-Framework zur Softwarearchitektur;
+	JQuery als oftmalige Voraussetzung fuer andere JS-Bibliotheken;  
+-->
+<link type="text/css" rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script src="ehome-directives.js"></script>
+<script src="app.js"></script><!-- Einbindung der Javascript-Dateien mit dem Code fuer AngularJS -->
+</head>
+<div class='container' data-ng-app="ehome">
+	<div class='row'>
+		<div class='col-md-12'>
+			<h1>AngularJS: Webanwendungen mit JavaScript und einer Prise JSF</h1>
+			<div class="col-md-6">
+				<h2>Grundsaetzliche Beispiele</h2>
+				<div data-ng-controller="ehomeController as abteilung ">
+					<h3>Formulare und Data-Bindings</h3>
+					<!-- Beispiel für DataBinding mit angeschlossenem Formular-Eingabefeldern -->
+					<div class='list-group'>
+						<div class= 'list-group-item' ng-repeat="m in abteilung.mitarbeiter">
+							<h3>{{m.name}}</h3>
+							<!-- <div Info-Text></div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

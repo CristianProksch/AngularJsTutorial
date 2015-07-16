@@ -1,0 +1,24 @@
+[
+	{
+		"name": "Cristian",
+		"info": "Ist seit 2 Monaten Hiwi in der Abetilung",
+		"art" : "Hiwi",
+		"vergütung": "2.50",
+		"projecte" : [
+			"Programmieren",
+			"Testen",
+			"Tüfteln"
+		]
+	},
+	{
+		"name": "Tobias",
+		"info": "Ist seit 5 Monaten Hiwi in der Abetilung",
+		"art" : "Hiwi2",
+		"vergütung": "5.00",
+		"projecte" : [
+			"Programmieren",
+			"Drucken",
+			"Fenster öffnen"
+		]
+	}
+]
